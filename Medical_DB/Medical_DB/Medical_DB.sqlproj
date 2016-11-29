@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Medical_DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{1db2884a-21e1-4c34-825c-ff0fedb915d5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Medical_DB</RootNamespace>
+    <AssemblyName>Medical_DB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Functions" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Tables\New" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Functions\GetDepartRegisterQuantity.sql" />
+    <Build Include="dbo\Functions\GetDoctorReceptionQuantity.sql" />
+    <Build Include="dbo\Functions\GetDoctorRegisterQuantity.sql" />
+    <Build Include="dbo\Functions\GetHospitalReceptionQuantity.sql" />
+    <Build Include="dbo\Functions\GetHospitalRegisteringQuantity.sql" />
+    <Build Include="dbo\Functions\GetVisitTime.sql" />
+    <Build Include="dbo\Tables\New\TD_Order_H订单表主表.sql" />
+    <Build Include="dbo\Tables\New\TD_Order_M订单详细表.sql" />
+    <Build Include="dbo\Tables\New\TD_Order_S订单状态表.sql" />
+    <Build Include="dbo\Tables\Administrators.sql" />
+    <Build Include="dbo\Tables\AdvertSource.sql" />
+    <Build Include="dbo\Tables\Areas.sql" />
+    <Build Include="dbo\Tables\AuditLog.sql" />
+    <Build Include="dbo\Tables\Buttons.sql" />
+    <Build Include="dbo\Tables\Campaigns.sql" />
+    <Build Include="dbo\Tables\Contents.sql" />
+    <Build Include="dbo\Tables\DataDictionaries.sql" />
+    <Build Include="dbo\Tables\DepartmentCategories.sql" />
+    <Build Include="dbo\Tables\Departments.sql" />
+    <Build Include="dbo\Tables\DeviceInfos.sql" />
+    <Build Include="dbo\Tables\DeviceMembers.sql" />
+    <Build Include="dbo\Tables\DictEntry.sql" />
+    <Build Include="dbo\Tables\DoctorDepartmentRelations.sql" />
+    <Build Include="dbo\Tables\DoctorEvaluates.sql" />
+    <Build Include="dbo\Tables\DoctorQuantity.sql" />
+    <Build Include="dbo\Tables\Doctors.sql" />
+    <Build Include="dbo\Tables\HospitalCsvs.sql" />
+    <Build Include="dbo\Tables\HospitalDepartmentRelations.sql" />
+    <Build Include="dbo\Tables\Hospitals.sql" />
+    <Build Include="dbo\Tables\HospitalStopDates.sql" />
+    <Build Include="dbo\Tables\HotSettings.sql" />
+    <Build Include="dbo\Tables\Informations.sql" />
+    <Build Include="dbo\Tables\Judgment.sql" />
+    <Build Include="dbo\Tables\MemberActions.sql" />
+    <Build Include="dbo\Tables\MemberAlias.sql" />
+    <Build Include="dbo\Tables\MemberInfos.sql" />
+    <Build Include="dbo\Tables\Members.sql" />
+    <Build Include="dbo\Tables\MemberStatistics.sql" />
+    <Build Include="dbo\Tables\MenuButtons.sql" />
+    <Build Include="dbo\Tables\Menus.sql" />
+    <Build Include="dbo\Tables\MessageTemplates.sql" />
+    <Build Include="dbo\Tables\MyDoctors.sql" />
+    <Build Include="dbo\Tables\MyHospitals.sql" />
+    <Build Include="dbo\Tables\OperationLogs.sql" />
+    <Build Include="dbo\Tables\OrderActions.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
+    <Build Include="dbo\Tables\Organizations.sql" />
+    <Build Include="dbo\Tables\OrganizationUser.sql" />
+    <Build Include="dbo\Tables\PatientClinicCards.sql" />
+    <Build Include="dbo\Tables\Patients.sql" />
+    <Build Include="dbo\Tables\PayRequests.sql" />
+    <Build Include="dbo\Tables\Paytypes.sql" />
+    <Build Include="dbo\Tables\PushMessage.sql" />
+    <Build Include="dbo\Tables\Refunds.sql" />
+    <Build Include="dbo\Tables\Releases.sql" />
+    <Build Include="dbo\Tables\Reviews.sql" />
+    <Build Include="dbo\Tables\RoleAdminRelations.sql" />
+    <Build Include="dbo\Tables\RoleButtonRelations.sql" />
+    <Build Include="dbo\Tables\RoleMenuRelations.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\RuleSettings.sql" />
+    <Build Include="dbo\Tables\SafeSetting2.sql" />
+    <Build Include="dbo\Tables\SafeSettings.sql" />
+    <Build Include="dbo\Tables\Settings.sql" />
+    <Build Include="dbo\Tables\Sms.sql" />
+    <Build Include="dbo\Tables\Sources.sql" />
+    <Build Include="dbo\Tables\SysFileInfo.sql" />
+    <Build Include="dbo\Tables\VisitGroups.sql" />
+    <Build Include="dbo\Tables\Visits.sql" />
+    <Build Include="dbo\Tables\VisitSettings.sql" />
+  </ItemGroup>
+</Project>

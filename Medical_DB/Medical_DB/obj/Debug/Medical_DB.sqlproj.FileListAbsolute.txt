@@ -1,0 +1,9 @@
+J:\Git\jyy\Medical_DB\Medical_DB\bin\Debug\Medical_DB.dacpac
+J:\Git\jyy\Medical_DB\Medical_DB\bin\Debug\Medical_DB.dll
+J:\Git\jyy\Medical_DB\Medical_DB\bin\Debug\Medical_DB.pdb
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\Model.xml
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\refactor.xml
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\postdeploy.sql
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\predeploy.sql
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\Medical_DB.dll
+J:\Git\jyy\Medical_DB\Medical_DB\obj\Debug\Medical_DB.pdb

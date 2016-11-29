@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[VisitGroups] (
+    [Id]                BIGINT          IDENTITY (1, 1) NOT NULL,
+    [HospitalId]        BIGINT          NOT NULL,
+    [DepartmentId1]     BIGINT          NOT NULL,
+    [DepartmentId]      BIGINT          NOT NULL,
+    [DoctorId]          BIGINT          NOT NULL,
+    [VisitHospitalId]   BIGINT          NOT NULL,
+    [Week]              INT             NOT NULL,
+    [TimeBucket]        INT             NOT NULL,
+    [Quantity]          INT             NOT NULL,
+    [VisitType]         INT             NOT NULL,
+    [RegistrationFee]   DECIMAL (18, 2) NOT NULL,
+    [IsPlus]            INT             NOT NULL,
+    [PlusFee]           DECIMAL (18, 2) NOT NULL,
+    [Createtime]        DATETIME        NOT NULL,
+    [Updatetime]        DATETIME        NOT NULL,
+    [Status]            AS              (case when [checkstatus]<(0) then [checkstatus] when [ParentStatus]<(0) then [ParentStatus] when [checkstatus]=(2) then [checkstatus] when [ParentStatus]=(2) then [ParentStatus] else (1) end),
+    [TempStatus]        INT             CONSTRAINT [DF_VisitGroups_TempStatus] DEFAULT ((0)) NOT NULL,
+    [CheckStatus]       INT             CONSTRAINT [DF_VisitGroups_CheckStatus] DEFAULT ((1)) NOT NULL,
+    [ParentStatus]      INT             CONSTRAINT [DF_VisitGroups_ParentStatus] DEFAULT ((1)) NOT NULL,
+    [PlusQuantity]      INT             NOT NULL,
+    [StartDate]         DATE            NOT NULL,
+    [EndDate]           DATE            NOT NULL,
+    [VisitDepartmentId] INT             CONSTRAINT [DF_VisitGroups_VisitDepartmentId] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_VisitGroups] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
